@@ -1,0 +1,50 @@
+<div class="container">
+  <h3>List User</h3>
+  <table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Tài Khoản</th>
+        <th>Giới tính</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Quyền</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i=0; i< data.rows.length; i++) {%>
+      <tr>
+        <td>
+          <%= i+1 %>
+        </td>
+        <td>
+          <%= data.rows[i].ten %>
+        </td>
+        <td>
+          <%= data.rows[i].taikhoan %>
+        </td>
+        <td>
+          <%= data.rows[i].gioitinh %>
+        </td>
+        <td>
+          <%= data.rows[i].email %>
+        </td>
+        <td>
+          <%= data.rows[i].diachi %>
+        </td>
+        <td>
+          <%= data.rows[i].quyen %>
+        </td>
+        
+        <td>
+          <a href="/detail-user/<%= data.rows[i].id_user %>"><i class="fa-solid fa-eye"></i></a> |
+          <a href=""><i class="fa-solid fa-wrench"></i></a> |
+          <a href=""><i class="fa-solid fa-trash"></i></a>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>

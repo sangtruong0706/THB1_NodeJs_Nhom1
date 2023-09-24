@@ -1,0 +1,33 @@
+{
+  "name": "th_buoi1",
+  "version": "1.0.0",
+  "description": "backend nodejs",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangtruong0706/TH_NodeJs.git"
+  },
+  "author": "2001030 Truong Van Sang Em",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sangtruong0706/TH_NodeJs/issues"
+  },
+  "homepage": "https://github.com/sangtruong0706/TH_NodeJs#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "mysql2": "^3.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/node": "^7.22.6",
+    "@babel/preset-env": "^7.22.7",
+    "nodemon": "^3.0.1"
+  }
+}
