@@ -1,0 +1,67 @@
+<div class="container" style="max-width: 800px;">
+  <div class="row">
+    <h3>Sửa Người Dùng</h3>
+    <form method="POST" action="/update-user">
+      <input type="hidden" name="id" value="<%= data.rows.id %>" />
+      <div class="mb-3">
+        <label for="acountName" class="form-label">User Name</label>
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="acountName"
+          value="<%= data.rows.username %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Full name</label>
+        <input
+          type="text"
+          name="fullname"
+          class="form-control"
+          id="name"
+          value="<%= data.rows.fullname %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <input
+          type="text"
+          name="gender"
+          class="form-control"
+          id="gender"
+          value="<%= data.rows.gender %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="email"
+          value="<%= data.rows.email %>"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Địa chỉ</label>
+        <input
+          type="text"
+          name="address"
+          class="form-control"
+          id="address"
+          value="<%= data.rows.address %>"
+        />
+      </div>
+      <div class="mb-3">
+        <select name="groupId" id="status" class="form-control">
+          <option>-- Quyền --</option>
+          <option value="0">User</option>
+          <option value="1">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

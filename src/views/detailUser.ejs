@@ -1,37 +1,25 @@
 <div class="container">
-    <h3>Detail User</h3>
-    <table class="table align-middle mb-0 bg-white">
-      <thead class="bg-light">
-        <tr>
-          <th>Tên</th>
-          <th>Tài Khoản</th>
-          <th>Giới tính</th>
-          <th>Email</th>
-          <th>Địa chỉ</th>
-          <th>Quyền</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <%= data.rows.ten %>
-          </td>
-          <td>
-            <%= data.rows.taikhoan %>
-          </td>
-          <td>
-            <%= data.rows.gioitinh %>
-          </td>
-          <td>
-            <%= data.rows.email %>
-          </td>
-          <td>
-            <%= data.rows.diachi %>
-          </td>
-          <td>
-            <%= data.rows.quyen %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h3>Detail User</h3>
+  <table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Full name</th>
+        <th>User name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Group Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= data.rows.fullname %></td>
+        <td><%= data.rows.username %></td>
+        <td><%= data.rows.gender %></td>
+        <td><%= data.rows.email %></td>
+        <td><%= data.rows.address %></td>
+        <td><%= data.rows.groupId %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

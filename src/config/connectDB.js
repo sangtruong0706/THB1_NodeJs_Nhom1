@@ -1,9 +1,17 @@
-import mysql from 'mysql2';
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'nodejs_database',
-    password: ''
+const { Sequelize } = require("sequelize");
+
+const sequelize = new Sequelize("nodejs_database", "root", null, {
+  host: "localhost",
+  dialect: "mysql",
+  logging: false,
 });
-const connection = pool.promise();
-export default connection;
+
+let connectDB = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+};
+module.exports = connectDB;

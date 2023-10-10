@@ -4,7 +4,7 @@
     <thead class="bg-light">
       <tr>
         <th>STT</th>
-        <th>Tên</th>
+        <th>Họ và Tên</th>
         <th>Tài Khoản</th>
         <th>Giới tính</th>
         <th>Email</th>
@@ -20,28 +20,33 @@
           <%= i+1 %>
         </td>
         <td>
-          <%= data.rows[i].ten %>
+          <%= data.rows[i].fullname %>
         </td>
         <td>
-          <%= data.rows[i].taikhoan %>
+          <%= data.rows[i].username %>
         </td>
         <td>
-          <%= data.rows[i].gioitinh %>
+          <%= data.rows[i].gender %>
         </td>
         <td>
           <%= data.rows[i].email %>
         </td>
         <td>
-          <%= data.rows[i].diachi %>
+          <%= data.rows[i].address %>
         </td>
         <td>
-          <%= data.rows[i].quyen %>
+          <%if(data.rows[i].groupId==0){
+           %>
+           user
+          <%}else{%>
+            admin
+          <%}%>
         </td>
         
         <td>
-          <a href="/detail-user/<%= data.rows[i].id_user %>"><i class="fa-solid fa-eye"></i></a> |
-          <a href=""><i class="fa-solid fa-wrench"></i></a> |
-          <a href=""><i class="fa-solid fa-trash"></i></a>
+          <a href="/detail-user/<%= data.rows[i].id %>"><i class="fa-solid fa-eye"></i></a> |
+          <a href="/edit-user/<%= data.rows[i].id %>"><i class="fa-solid fa-wrench"></i></a> |
+          <a href="/delete-user/<%= data.rows[i].id %>"><i class="fa-solid fa-trash"></i></a> 
         </td>
       </tr>
       <%}%>

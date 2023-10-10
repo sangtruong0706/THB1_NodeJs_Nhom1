@@ -1,12 +1,26 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import viewEngine from './config/viewEngine';
-import initWebRouter from './route/webRoute';
+import express from "express";
+import dotenv from "dotenv";
+import viewEngine from "./config/viewEngine";
+import connectDB from "./config/connectDB";
+import initApiRoutes from "./route/apiRoute";
+import initWebRouter from "./route/webRoute";
+import cookieParser from "cookie-parser";
+// import session from "express-session";
+var bodyParser = require("body-parser");
+var bcrypt = require("bcryptjs");
+const path = require("path");
 dotenv.config();
 const app = express();
 viewEngine(app);
+app.use(cookieParser());
+const publicDirectory_ = path.join(__dirname, "./public");
+app.use(express.static(publicDirectory_));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+connectDB();
+initApiRoutes(app);
 initWebRouter(app);
 const port = process.env.PORT || 4444;
-app.listen(port, ()=>{
-    console.log(`server is running at http://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`server is running at http://localhost:${port}`);
 });
